@@ -1,0 +1,84 @@
+# ===== Secrets & environment =====
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+supabase/.env
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+*.log
+
+# ===== Model weights & training artifacts =====
+*.bin
+*.safetensors
+*.gguf
+*.pt
+*.pth
+checkpoints/
+outputs/
+runs/
+wandb/
+lora_weights/
+adapters/
+# Keep small config files that describe adapters if you want them tracked:
+!adapter_config.json
+
+# ===== Datasets (usually large / may contain sensitive synthetic data) =====
+data/raw/
+data/processed/
+*.jsonl
+*.parquet
+# Uncomment below if you DO want a small sample dataset tracked:
+# !data/sample/*.jsonl
+
+# ===== Node / Vite / React frontend =====
+node_modules/
+dist/
+.vite/
+frontend/dist/
+frontend/node_modules/
+.output/
+.nitro/
+frontend/.output/
+frontend/.nitro/
+
+# ===== Docker =====
+*.env.docker
+docker-compose.override.yml
+
+# ===== OS / editor junk =====
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# ===== Misc =====
+*.tmp
+*.bak
+
+# ===== TanStack generated files =====
+.tanstack/
+**/.tanstack/
+
+# ===== Additional generated/build files =====
+*.tsbuildinfo
+coverage/
+.cache/
+
+# ===== Project synthetic dataset =====
+!data/synthetic/
+!data/synthetic/*.jsonl
+backend/requirements-actual.txt
+
+# ===== Local Python/Conda environments =====
+nlp/
+.conda/

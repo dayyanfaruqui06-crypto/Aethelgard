@@ -1,0 +1,24 @@
+# Pinned from `pip freeze` in the working `nlp` venv — versions confirmed
+# to actually run this backend + model on this machine (RTX 3060, driver
+# 535.309.01). Filtered down to only what backend/*.py imports (directly
+# or lazily inside model.py) — the nlp venv is shared across other
+# projects (nipype, PyQt5, faiss, etc. deliberately excluded).
+
+# --- Web server ---
+fastapi==0.136.3
+uvicorn[standard]==0.42.0
+pydantic==2.12.5
+python-dotenv==1.2.2
+sse-starlette==3.4.4
+
+# --- Model / inference stack ---
+# torch==2.5.1 here is the plain PyPI build, which resolves to CUDA 12.4
+# runtime libs (see nvidia-*-cu12 deps below) — this is what's actually
+# installed and verified working locally, not a +cu121 build.
+torch==2.5.1
+transformers==5.5.4
+peft==0.19.1
+accelerate==1.13.0
+bitsandbytes==0.49.2
+sentencepiece==0.2.1
+safetensors==0.7.0
